@@ -12,7 +12,7 @@ typedef struct cll{
     Node *last_node;
 }CircularLinkedList;
 
-// Creates a new node
+// Creates a new node at the end of the circular linked list.
 void append(CircularLinkedList *ll, int data){
     Node *new_node;
     new_node = (Node * )malloc(sizeof(Node));
@@ -100,7 +100,6 @@ void printCLL(CircularLinkedList *ll){
     }
         
 }
-
 
 
 // Function for removing the last value.
