@@ -1,5 +1,6 @@
 *.exe
 *.pdf
 *.mp4
+*.zip
 /.vscode
 c_programme/.vscode/
