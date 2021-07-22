@@ -89,11 +89,24 @@ void printStack(stack *ptr){
 
 // Returns the top most element of the stack
 int stackTop(stack *ptr){
+    // Handling empty stack
+    if (isEmpty(ptr))
+    {
+        printf("Empty Stack.\n");
+        return -1;
+    }
+    
     return ptr->arr[ptr->top];
 }
 
 // Returns the bottom most element of the stack
 int stackBottom(stack *ptr){
+    // Handling empty stack
+    if (isEmpty(ptr))
+    {
+        printf("Empty Stack.\n");
+        return -1;
+    }
     return ptr->arr[0];
 }
 
