@@ -99,7 +99,8 @@ int pop(Stack *stack){
 
 // returns stack object at a given position. position count starts from 1 i.e from top of the stack.
 int peek(Stack *stack, int position){
-    if (position<1 && position>stack->maxSize){
+
+    if (position<1 || position>stack->size){
         printf("Invalid position.\n");
         return false;
     }else
@@ -150,7 +151,7 @@ void printStack(Stack *stack){
     {
         Node *last;
         printf("Stack Items: ");
-        
+        last = stack->top;
         while (last!=NULL)
         {
             printf("%d ",last->data);
@@ -169,9 +170,10 @@ int main(){
     // initializing stack and it's values.
     Stack new_stack;
     new_stack.top = NULL;
-    int size = 0;
-
+    new_stack.maxSize = 80;
+    new_stack.size = 0;
     push(&new_stack,100);
+    
     push(&new_stack,200);
     push(&new_stack,100);
     push(&new_stack,100);
@@ -181,6 +183,7 @@ int main(){
     printStack(&new_stack);
     printf("Bottom most element is: %d\n",stackBottom(&new_stack));
     printf("Top most element is: %d\n",stackTop(&new_stack));
+    int item = peek(&new_stack, 6);
     return 0;
 }
 
