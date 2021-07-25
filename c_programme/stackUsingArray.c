@@ -36,7 +36,7 @@ int push(stack *ptr, int data){
         ptr->top += 1;
     }else
     {
-        printf("Stack overflow errr occoured when pushing %d.\n", data);
+        printf("Stack overflow error occurred when pushing %d.\n", data);
         return -1;
     } 
     return 1;
@@ -134,7 +134,7 @@ int main(){
     }
     
     printStack(ptr);
-
+    free(simple_stack.arr);
     return 0;
 
 }
